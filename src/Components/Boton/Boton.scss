@@ -1,0 +1,18 @@
+.boton {
+  height: 3em;
+  width: 5em;
+  background-color: $color3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(235, 229, 229);
+  transition: 0.2s;
+  cursor: pointer;
+  transition: 0.4s;
+  border-radius: 12em;
+  &:hover {
+    background-color: #4d646644;
+    transition: 0.4s;
+    transform:scale(1.2);
+  }
+}

@@ -1,12 +1,10 @@
 .headerBody{
     height: 5em;
-
     background-color: $color2;
-    color: aliceblue;
     display: flex;
     position: sticky;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content:flex-end;
     align-items: center;
     top: 0;
 }
