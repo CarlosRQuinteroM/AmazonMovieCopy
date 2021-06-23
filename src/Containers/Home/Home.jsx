@@ -1,15 +1,17 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-// import { Card, Avatar } from 'antd';
-// import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import { Card } from "antd";
+import CarouselComponent from "../../Components/Scroll/Scroll"
 
-// const { Meta } = Card;
+
+
+const { Meta } = Card;
 
 const Home = (props) => {
   const [moviesTopRate, setMoviesTopRate] = useState([]);
 
-  const baseImgUrl = "https://image.tmdb.org/t/p"
-  const size = "w200"
+  const baseImgUrl = "https://image.tmdb.org/t/p";
+  const size = "w200";
 
   useEffect(() => {
     setTimeout(() => {
@@ -25,42 +27,37 @@ const Home = (props) => {
       setMoviesTopRate(res.data.results);
       console.log(res.data.results);
     } catch (error) {
-        console.log(error)
+      console.log(error);
     }
   };
 
   if (moviesTopRate === "") {
-      return(
-
-        <div>cargando</div>
-      )
+    return <div>cargando</div>;
   } else {
-      return(
-
-      <div className="HomeVista">
-          {moviesTopRate?.map((TopRate)=>{
-              return(
-                <div >
-                  <div className="Home" key={TopRate.id}>
-                        <div className="cardMovie">
-                            <img className="imgMovie" src={`${baseImgUrl}/${size}${TopRate.poster_path}`} alt="poster_path" />
-                               <div className="infoMovie">
-                                   <h2>${TopRate.title}</h2>
-    
-                               </div>
-                         </div>
-                    </div>
-                    </div>
-            
-              )
-      })}
-          
+    return (
         
+      <div className="HomeVista">
+           <CarouselComponent />
+        {moviesTopRate?.map((TopRate) => {
+          return (
+            <Card
+              className="Home"
+              key={TopRate.id}
+              style={{ width: 300 }}
+              cover={
+                <img
+                  className="imgMovie"
+                  src={`${baseImgUrl}/${size}${TopRate.poster_path}`}
+                  alt="poster_path"
+                />
+              }
+            >
+              <Meta title={TopRate.title} description="" />
+            </Card>
+          );
+        })}
       </div>
-      
-      )
-  
+    );
+  }
 };
-}
 export default Home;
-
