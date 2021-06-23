@@ -3,48 +3,48 @@ import axios from "axios";
 import { Card } from "antd";
 const { Meta } = Card;
 
-const ScrollTopRate = (props) => {
-  const [moviesTopRate, setMoviesTopRate] = useState([]);
+const ScrollComedy = (props) => {
+  const [moviesComedy, setMoviesComedy] = useState([]);
 
-  
+
   const baseImgUrl = "https://image.tmdb.org/t/p";
   const size = "w200";
 
   useEffect(() => {
     setTimeout(() => {
-      findTopRated();
+      findComedyMovie();
     }, 500);
   }, []);
 
-  const findTopRated = async () => {
+  const findComedyMovie = async () => {
     try {
       let res = await axios.get(
-        "https://api.themoviedb.org/3/movie/top_rated?api_key=210d6a5dd3f16419ce349c9f1b200d6d&language=en-US&page=1"
+        "https://api.themoviedb.org/3/discover/movie?api_key=210d6a5dd3f16419ce349c9f1b200d6d&with_genres=35"
       );
-      setMoviesTopRate(res.data.results);
+      setMoviesComedy(res.data.results);
       console.log(res.data.results);
     } catch (error) {
       console.log(error);
     }
   };
-  console.log(setMoviesTopRate);
+  console.log(setMoviesComedy);
 
-  if (moviesTopRate === "") {
+  if (moviesComedy === "") {
     return <div>cargando</div>;
   } else {
     return (
          <div>
-             <h3 id="titleScroll">TopRate</h3>
+             <h3 id="titleScroll">Comedy</h3>
       <div className="scrolling-wrapper">
-        {moviesTopRate?.map((TopRate) => {
+        {moviesComedy?.map((TopComedy) => {
           return (
             <Card
               className="card"
-              key={TopRate.id}
+              key={TopComedy.id}
               cover={
                 <img
                   className="imgMovie"
-                  src={`${baseImgUrl}/${size}${TopRate.poster_path}`}
+                  src={`${baseImgUrl}/${size}${TopComedy.poster_path}`}
                   alt="poster_path"
                 />
               }
@@ -58,4 +58,4 @@ const ScrollTopRate = (props) => {
   }
 };
 
-export default ScrollTopRate;
+export default ScrollComedy;
