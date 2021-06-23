@@ -1,0 +1,35 @@
+  .HomeVista{
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgb(54, 53, 53);
+
+  }
+.Home{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items:inherit;
+    width: 20em;
+    height: 20em;
+    transition: 0.5s;
+    background-color: rgba(68, 67, 65, 0.664);
+    border-radius: 1em;
+    &:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+}
+
+.imgMovie{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 1em;
+    justify-content: space-evenly;
+}
+
+
