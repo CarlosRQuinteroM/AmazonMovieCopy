@@ -1,16 +1,10 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Card } from "antd";
-import CarouselComponent from "../../Components/Scroll/Scroll"
-import ScrollTopRate from "../../Components/ScrollMovies/ScrollTopRate"
-
-
-
 const { Meta } = Card;
 
-const Home = (props) => {
+const ScrollTopRate = (props) => {
   const [moviesTopRate, setMoviesTopRate] = useState([]);
-
   const baseImgUrl = "https://image.tmdb.org/t/p";
   const size = "w200";
 
@@ -31,19 +25,35 @@ const Home = (props) => {
       console.log(error);
     }
   };
+  console.log(setMoviesTopRate);
 
   if (moviesTopRate === "") {
     return <div>cargando</div>;
   } else {
     return (
-        
-      <div className="HomeVista">
-
-           <CarouselComponent />
-           <ScrollTopRate/>
-
+         <div>
+             <h3 id="titleScroll">TopRate</h3>
+      <div className="scrolling-wrapper">
+        {moviesTopRate?.map((TopRate) => {
+          return (
+            <Card
+              className="card"
+              key={TopRate.id}
+              cover={
+                <img
+                  className="imgMovie"
+                  src={`${baseImgUrl}/${size}${TopRate.poster_path}`}
+                  alt="poster_path"
+                />
+              }
+            >
+            </Card>
+          );
+        })}
+      </div>
       </div>
     );
   }
 };
-export default Home;
+
+export default ScrollTopRate;
