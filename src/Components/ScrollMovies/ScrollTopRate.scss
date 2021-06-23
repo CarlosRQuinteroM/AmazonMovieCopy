@@ -1,0 +1,41 @@
+.scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items:inherit;
+    width: 90vw;
+    height: 20em;
+    border-radius: 1.5em;
+
+    .card {
+      display: inline-block;
+      background-color: rgb(54, 53, 53);
+      width: 15em;
+      border:solid 1em transparent;
+      &:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+      
+    }
+  }
+  .scrolling-wrapper { 
+    -webkit-overflow-scrolling:touch; 
+
+  }
+
+
+  .imgMovie{
+    display: flex;
+    border-radius: 1em;
+    justify-content: space-evenly;
+}
+
+#titleScroll{
+  color: rgb(246, 237, 218);
+
+}

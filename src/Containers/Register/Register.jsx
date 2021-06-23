@@ -8,11 +8,9 @@ const Register = () => {
   const [datosUser, setDatosUser] = useState({
     name: "",
     last_name1: "",
-    last_name2: "",
     country: "",
     city: "",
     shipping_address: "",
-    billing_address: "",
     email: "",
     password: "",
     phone: "",
@@ -84,19 +82,10 @@ const Register = () => {
             type="text"
             name="last_name1"
             onChange={updateFormulario}
-            placeholder="last_name1"
+            placeholder="Lastname"
             //   onBlur={() => checkError("last_name1")}
           ></input>
           {/* <div className="error">{errors.elast_name1}</div> */}
-          <input
-            className="inputBase"
-            type="text"
-            name="last_name2"
-            onChange={updateFormulario}
-            placeholder="last Name"
-            //   onBlur={() => checkError("last_name2")}
-          ></input>
-          {/* <div className="error">{errors.elast_name2}</div> */}
 
           <input
             className="inputBase"
@@ -130,8 +119,7 @@ const Register = () => {
             className="inputBase"
             name="country"
             onChange={updateFormulario}
-            id="opcionCountry"
-          >
+            id="opcionCountry">
             <option disabled>Country</option>
             <option value="spain">Spain</option>
           </select>
@@ -140,8 +128,7 @@ const Register = () => {
             className="inputBase"
             name="country"
             onChange={updateFormulario}
-            id="opcionCity"
-          >
+            id="opcionCity">
             <option disabled>City</option>
             <option value="valencia">Valencia</option>
           </select>
@@ -151,7 +138,7 @@ const Register = () => {
             type="string"
             name="birthday"
             onChange={updateFormulario}
-            placeholder="YYYY/MM/DD"
+            placeholder="Birthday YYYY/MM/DD"
             //   onBlur={() => checkError("birthday")}
           ></input>
           {/* <div className="error">{errors.eBirthday}</div> */}
@@ -175,16 +162,6 @@ const Register = () => {
             //   onBlur={() => checkError("shipping_address")}
           ></input>
           {/* <div className="error">{errors.eshipping_address}</div> */}
-
-          <input
-            className="inputBase"
-            type="string"
-            name="billing_address"
-            onChange={updateFormulario}
-            placeholder="billing_address"
-            //   onBlur={() => checkError("billing_address")}
-          ></input>
-          {/* <div className="error">{errors.ebilling_address}</div> */}
 
           <button
             className="botonRegister"
