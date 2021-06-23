@@ -2,9 +2,9 @@
 .formularios {
     display: flex;
       align-items: center;
-      background-color: white;
+      background-color: rgb(44, 44, 44);
       border-radius: 5px;
-      margin-top: 6em;
+
       justify-content: center;
   }
   
@@ -12,10 +12,9 @@
       display: flex;
       flex-direction: column;
       position: relative;
+      margin-top: 6em;
   
   }
-  
-  
   
   .inputBase{
       display: block;
@@ -30,9 +29,6 @@
       color: rgba(0,0,0,.4);
   
   }
-  
-  
-    
     [type=submit] {
       margin: 3em;
       width: 16em;
@@ -47,10 +43,9 @@
       z-index: 1;
       
     }
-  
     [type=submit]:hover{
   
-      background-color:#FFA700;
+      background-color:#724f0e;
       transition: 0.3s;
     }
   
@@ -58,7 +53,7 @@
     
     .inputBase:focus {
       outline: none;
-      border-color: #FFA700;
+      border-color: #724f0e;
     }
   
     .textRight{
