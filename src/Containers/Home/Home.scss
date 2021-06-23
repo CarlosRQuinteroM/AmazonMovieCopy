@@ -1,0 +1,27 @@
+  .HomeVista{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgb(54, 53, 53);
+
+  }
+.Home{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 20em;
+    height: 20em;
+    transition: 0.5s;
+    &:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+}
+
+.imgMovie{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 1em;
+    justify-content: space-evenly;
+}
