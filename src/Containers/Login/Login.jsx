@@ -142,4 +142,8 @@ const Login = (props) => {
     )
 }
 
-export default connect()(Login) 
+
+export default connect((state) => ({ 
+  credentials:state.credentials
+  
+}))(Login);
