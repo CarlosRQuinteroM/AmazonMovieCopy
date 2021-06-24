@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card } from "antd";
-const { Meta } = Card;
+
 
 const ScrollWar = (props) => {
   const [moviesWar, setMoviesWar] = useState([]);
@@ -22,7 +22,7 @@ const ScrollWar = (props) => {
         "https://api.themoviedb.org/3/discover/movie?api_key=210d6a5dd3f16419ce349c9f1b200d6d&with_genres=10752"
       );
       setMoviesWar(res.data.results);
-      console.log(res.data.results);
+      // console.log(res.data.results);
     } catch (error) {
       console.log(error);
     }

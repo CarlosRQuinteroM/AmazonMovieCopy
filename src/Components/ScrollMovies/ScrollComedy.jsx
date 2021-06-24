@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card } from "antd";
-const { Meta } = Card;
+
 
 const ScrollComedy = (props) => {
   const [moviesComedy, setMoviesComedy] = useState([]);
@@ -22,12 +22,12 @@ const ScrollComedy = (props) => {
         "https://api.themoviedb.org/3/discover/movie?api_key=210d6a5dd3f16419ce349c9f1b200d6d&with_genres=35"
       );
       setMoviesComedy(res.data.results);
-      console.log(res.data.results);
+      // console.log(res.data.results);
     } catch (error) {
       console.log(error);
     }
   };
-  console.log(setMoviesComedy);
+  // console.log(setMoviesComedy);
 
   if (moviesComedy === "") {
     return <div>cargando</div>;

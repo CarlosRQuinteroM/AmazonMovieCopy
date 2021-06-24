@@ -18,6 +18,7 @@ const Header = (props) => {
       <div className="headerBody">
         <Boton lugar="/" destino="home" onClick={() => takeMe("/")} />
         <div onClick={() => takeMe("/profile")}>
+          
           <img className="imgUser"  src={props.credentials.user.imgUser} alt="imgUser"/>
         </div>
         <div onClick={() => logOut("/")}>
