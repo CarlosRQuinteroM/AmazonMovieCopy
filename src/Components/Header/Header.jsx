@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { LOGOUT } from "../../redux/type";
+import { DELETE_MOVIE } from "../../redux/type";
 import Boton from "../Boton/Boton";
 
 const Header = (props) => {
@@ -11,16 +12,15 @@ const Header = (props) => {
   };
   const logOut = () => {
     props.dispatch({ type: LOGOUT });
+    props.dispatch({type: DELETE_MOVIE})
   };
 
   if (props.credentials?.token !== "") {
     return (
       <div className="headerBody">
         <Boton lugar="/" destino="home" onClick={() => takeMe("/")} />
-
-        <Boton lugar="/login" destino="Login" onClick={() => takeMe("/")} />
-
         <div onClick={() => takeMe("/profile")}>
+          
           <img className="imgUser"  src={props.credentials.user.imgUser} alt="imgUser"/>
         </div>
         <div onClick={() => logOut("/")}>

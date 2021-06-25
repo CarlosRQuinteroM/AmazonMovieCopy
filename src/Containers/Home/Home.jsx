@@ -1,6 +1,5 @@
-import axios from "axios";
+// import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Card } from "antd";
 import CarouselComponent from "../../Components/Scroll/Scroll"
 import ScrollTopRate from "../../Components/ScrollMovies/ScrollTopRate"
 import ScrollComedy from "../../Components/ScrollMovies/ScrollComedy"
@@ -13,11 +12,7 @@ import { connect } from "react-redux";
 
 const Home = (props) => {
 
-  const [moviesTopRate, setMoviesTopRate] = useState([]);
-  const [moviesComedy, setMoviesComedy] = useState([]);
-  const [moviesWar, setMoviesWar] = useState([]);
-
-
+  const [moviesTopRate , setMoviesTopRate] = useState([]);
 
   if (moviesTopRate === "") {
 

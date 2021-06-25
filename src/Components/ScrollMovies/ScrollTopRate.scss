@@ -1,5 +1,5 @@
 .scrolling-wrapper {
-    overflow-x: scroll;
+    // overflow-x: hidden;
     overflow-y: hidden;
     white-space: nowrap;
     position: relative;
@@ -11,6 +11,7 @@
     height: 20em;
     border-radius: 1.5em;
 
+  
 
     .card {
       display: inline-block;
@@ -24,10 +25,10 @@
       
     }
   }
-  .scrolling-wrapper { 
-    -webkit-overflow-scrolling:touch; 
+  // .scrolling-wrapper { 
+  //   -webkit-overflow-scrolling:touch; 
 
-  }
+  // }
 
 
   .imgMovie{
