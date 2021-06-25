@@ -6,8 +6,15 @@
     flex-direction: row;
     justify-content:flex-end;
     align-items: center;
+    position: sticky;
+    width: 98vw;
     top: 0;
+    left: 0;
     z-index: 100;
+    width: 100%;
+    .Boton{
+        padding-right: 1em;
+    }
 
 }
 .imgUser{

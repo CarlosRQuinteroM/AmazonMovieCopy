@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 import React, { useState, useEffect } from "react";
 import CarouselComponent from "../../Components/Scroll/Scroll"
 import ScrollTopRate from "../../Components/ScrollMovies/ScrollTopRate"

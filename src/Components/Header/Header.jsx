@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { LOGOUT } from "../../redux/type";
+import { DELETE_MOVIE } from "../../redux/type";
 import Boton from "../Boton/Boton";
 
 const Header = (props) => {
@@ -11,6 +12,7 @@ const Header = (props) => {
   };
   const logOut = () => {
     props.dispatch({ type: LOGOUT });
+    props.dispatch({type: DELETE_MOVIE})
   };
 
   if (props.credentials?.token !== "") {
