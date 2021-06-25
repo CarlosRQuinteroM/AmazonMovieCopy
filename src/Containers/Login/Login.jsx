@@ -89,7 +89,7 @@ const Login = (props) => {
           let data = {
             token: res.data.token,
             user: res.data.user,
-            idUser: res.data.user._id,
+            idUser: res.data.user.id,
           };
           console.log(data);
     
