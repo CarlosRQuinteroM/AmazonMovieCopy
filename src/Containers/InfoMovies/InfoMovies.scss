@@ -31,6 +31,7 @@
     background-color: rgb(0, 0, 0);
     z-index: 2;
     border-radius: 2em;
+    padding-left: 1em;
 
     .poster_path {
       margin-left: 1.5em;
@@ -41,6 +42,7 @@
 
   .infoPoster {
     border: solid 1px rgb(148, 144, 144);
+    padding-left: 1em;
     width: 45em;
     color: rgb(200, 200, 200);
     .infoPoster2 {

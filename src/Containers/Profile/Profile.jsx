@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import moment from "moment";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import profilePic from "../../img/profile.png"
 
 const Profile = (props) => {
   let history = useHistory();
@@ -13,11 +14,7 @@ const Profile = (props) => {
         <div className="cardProfile">
           <div className="profile">
             {" "}
-            <img
-              className="imgProfile"
-              src={props.credentials.user.imgUser}
-              alt="profile"
-            />
+            <img className="imgProfile"  src={!props.credentials.user.imgUser ? profilePic : props.credentials.user.imgUser } alt="imgUser"/>
           </div>
           <div className="textProfile">
             <div>
@@ -36,17 +33,17 @@ const Profile = (props) => {
               <p>Teléfono: {props.credentials.user.phone}</p>
             </div>
             <div>
-              <p>País{props.credentials.user.country}</p>
+              <p>País: {props.credentials.user.country}</p>
             </div>
             <div>
-              <p>Ciudad{props.credentials.user.city}</p>
+              <p>Ciudad: {props.credentials.user.city}</p>
             </div>
             <div>
               <p>Dirección: {props.credentials.user.shipping_address}</p>
             </div>
             <div>
               <p>
-                Nacimiento{moment(props.credentials.user.birthday).format("LL")}
+                Nacimiento: {moment(props.credentials.user.birthday).format("LL")}
               </p>
             </div>
           </div>

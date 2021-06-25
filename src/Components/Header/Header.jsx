@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { LOGOUT } from "../../redux/type";
 import { DELETE_MOVIE } from "../../redux/type";
 import Boton from "../Boton/Boton";
+import  profilePic from "../../img/profile.png";
 
 const Header = (props) => {
   let history = useHistory();
@@ -20,8 +21,12 @@ const Header = (props) => {
       <div className="headerBody">
         <Boton lugar="/" destino="home" onClick={() => takeMe("/")} />
         <div onClick={() => takeMe("/profile")}>
+
           
-          <img className="imgUser"  src={props.credentials.user.imgUser} alt="imgUser"/>
+          <img className="imgUser"  src={!props.credentials.user.imgUser ? profilePic : props.credentials.user.imgUser } alt="imgUser"/>
+                    
+          {/* <img className="imgUser"  src={profilePic} alt="imgUser"/> */}
+          
         </div>
         <div onClick={() => logOut("/")}>
         <Boton lugar="/" destino="LogOut"  />
