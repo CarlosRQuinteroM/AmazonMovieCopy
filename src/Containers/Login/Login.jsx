@@ -91,7 +91,7 @@ const Login = (props) => {
             user: res.data.user,
             idUser: res.data.user.id,
           };
-          console.log(data);
+          // console.log(data);
     
     
           props.dispatch({ type: LOGIN, payload: data });

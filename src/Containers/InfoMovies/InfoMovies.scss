@@ -38,6 +38,26 @@
       border-radius: 0.3em;
       z-index: 4;
     }
+      .infoPoster {
+    border: solid 1px rgb(148, 144, 144);
+    padding-left: 1em;
+    width: 45em;
+    color: rgb(200, 200, 200);
+    .infoPoster2 {
+      align-items: flex-start;
+      border: solid 1px rgb(148, 144, 144);
+      width: 45em;
+    }
+    .infoPoster3 {
+      align-items: flex-start;
+      border: solid 1px rgb(148, 144, 144);
+    }
+    .infoPoster4 {
+      align-items: flex-start;
+      border: solid 1px rgb(148, 144, 144);
+      width: 10em;
+    }
+  }
   }
 
   .infoPoster {
@@ -63,6 +83,17 @@
   .botonAlquiler {
     align-items: flex-start;
     border: solid 1px rgb(148, 144, 144);
-    width: 10em;
+    border-radius:2em;
+    background-color: $color4;
+    width: 7em;
+    height: 4em;
+    align-items: center;
+    align-content: center;
+    &:hover{
+      background-color: $color1;
+      transition: 0.5s;
+      transform:scale(1.05) ;
+
+    }
   }
 }

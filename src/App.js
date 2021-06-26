@@ -7,6 +7,7 @@ import InfoMovies from './Containers/InfoMovies/InfoMovies';
 import Login from './Containers/Login/Login';
 import Profile from './Containers/Profile/Profile';
 import Register from './Containers/Register/Register';
+import RentMovie from './Containers/RentMovie/RentMovie';
 
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
         <Route path="/register" exact component={Register}/>
         <Route path="/profile" exact component={Profile} />
         <Route path='/infomovie' exact component={InfoMovies}/>
+        <Route path='/rentmovie' exact component={RentMovie}/>
+        
         
       </Switch>
       <Footer/>

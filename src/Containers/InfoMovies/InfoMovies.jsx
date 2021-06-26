@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { ADD_MOVIE } from "../../redux/type"
 
 const InfoMovies = (props) => {
   let history = useHistory();
@@ -9,10 +10,25 @@ const InfoMovies = (props) => {
   const size = "w1280";
   const sizePoster = "w200";
 
+  const Alquiler = (movie) => {
+    try{
+
+      props.dispatch({type:ADD_MOVIE, payload: movie});
+      setTimeout(() => {
+        history.push('/rentmovie');
+      }, 500);
+      
+
+
+  }catch (err){
+       console.log(err);      
+       }      
+
+  }
+  
+
   if (props.movies !== "") {
-    {
-      console.log(props.movies);
-    }
+    {console.log(props.movies)}
     return (
       <div className="selectMovie">
         <img
@@ -42,8 +58,8 @@ const InfoMovies = (props) => {
               <h4>Me Gusta: {props.movies.vote_count}</h4>
             </div>
           </div>
-          <div className="botonAlquiler" >
-           
+          <div className="botonAlquiler" onClick={()=>Alquiler(props.movies)} >
+            Alquilar
           </div>
         </div>
       </div>

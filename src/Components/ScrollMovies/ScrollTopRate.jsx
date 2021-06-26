@@ -43,7 +43,10 @@ const ScrollTopRate = (props) => {
     try{
 
       props.dispatch({type:ADD_MOVIE, payload: movie});
-      history.push('/infomovie');
+      setTimeout(() => {
+        history.push('/infomovie');
+      }, 500);
+      
 
 
   }catch (err){
