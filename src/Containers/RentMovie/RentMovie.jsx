@@ -1,37 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import moment from "moment";
-
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-import { useState } from "react";
-
-
-const useStyles = makeStyles((theme) => ({
-  container: {
-    display: "flex",
-    flexWrap: "wrap",
-  },
-  textField: {
-    marginLeft: theme.spacing(7),
-    marginRight: theme.spacing(1),
-    width: 250,
-  },
-}));
-
+import axios from "axios";
 
 const RentMovie = (props) => {
-
   let history = useHistory();
 
-  const today = moment();
+  const today = moment().format("YYYY-MM-DD")
+  // const returnDay =  datosUser.returnDate;
 
+  const [datosUser, setDatosUser] = useState({
+    returnDate: "",
+    userName: "",
+  });
+
+  const updateFormulario = (e) => {
+    setDatosUser({ ...datosUser, [e.target.name]: e.target.value });
+  };
+
+  const ejecutaRegistro = async () => {
+
+    let token = props.credentials.token;
+
+    let body = {
+      idUser: props.credentials.user.id,
+      idMovie: props.movies.id,
+      movieTitle: props.movies.title,
+      returnDate: datosUser.returnDate,
+      rentalDate : today,
+      posterMovie:props.movies.poster_path, 
+    };
+
+    console.log(body);
+
+    axios
+    .post("http://localhost:3005/orders/", body, {headers:{'authorization':'Bearer ' + token}})
+    .then((res) => {})
+    .catch((error) => {
+      console.log(error);
+    });
+  };
 
   const baseImgUrl = "https://image.tmdb.org/t/p";
   const size = "w1280";
   const sizePoster = "w200";
-  console.log(props.movies);
+  // console.log(props.movies.id);
 
   if (!props.credentials?.token) {
     setTimeout(() => {
@@ -64,8 +78,32 @@ const RentMovie = (props) => {
               {props.movies.title}. ({props.movies.release_date})
             </h2>
 
-            <p>Today: {today.format("DD-MM-YYYY")}</p>
-            {/* <p> Return in: {moment(today,  date ).fromNow()}</p> */}
+            <h4 name="userName">
+              {" "}
+              nombre : {props.credentials.user.name}{" "}
+              {props.credentials.user.last_name1}
+            </h4>
+
+            <p>Today: {today}</p>
+
+            <input
+              className="inputBase"
+              type="date"
+              name="returnDate"
+              onChange={updateFormulario}
+              placeholder="Fecha de entrega :"
+              onchange="this.className=(this.value!=''?'has-value':'')"
+            ></input>
+
+            {/* <p> Return in: {moment(today, returnDay).fromNow()}</p> */}
+            {/* esto  cuenta cuantos son los  los dias de alquiler  */}
+          </div>
+          <div
+            id="Botom"
+            className="newUserBoton"
+            onClick={() => ejecutaRegistro()}
+          >
+            Enviar
           </div>
         </div>
       </div>
