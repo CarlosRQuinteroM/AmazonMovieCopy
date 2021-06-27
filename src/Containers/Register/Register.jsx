@@ -134,6 +134,17 @@ const Register = () => {
           </select>
 
           <input
+              className="inputBase"
+              type="date"
+              name="birthday"
+              onChange={updateFormulario}
+              placeholder="Birthday"
+              onchange="this.className=(this.value!=''?'has-value':'')"
+                //   onBlur={() => checkError("birthday")}
+            ></input>
+            {/* <div className="error">{errors.eBirthday}</div> */}
+
+          {/* <input
             className="inputBase"
             type="string"
             name="birthday"
@@ -141,7 +152,7 @@ const Register = () => {
             placeholder="Birthday YYYY/MM/DD"
             //   onBlur={() => checkError("birthday")}
           ></input>
-          {/* <div className="error">{errors.eBirthday}</div> */}
+          <div className="error">{errors.eBirthday}</div> */}
 
           <input
             className="inputBase"
