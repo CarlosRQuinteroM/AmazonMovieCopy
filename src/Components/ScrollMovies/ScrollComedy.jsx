@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card } from "antd";
+import { connect } from 'react-redux'
+import { ADD_MOVIE } from "../../redux/type"
+import { useHistory } from "react-router-dom";
 
 
 const ScrollComedy = (props) => {
+  let history = useHistory();
   const [moviesComedy, setMoviesComedy] = useState([]);
 
 
@@ -22,12 +26,31 @@ const ScrollComedy = (props) => {
         "https://api.themoviedb.org/3/discover/movie?api_key=210d6a5dd3f16419ce349c9f1b200d6d&with_genres=35"
       );
       setMoviesComedy(res.data.results);
+
+      props.dispatch({ type: ADD_MOVIE , payload: res.data.results });
       // console.log(res.data.results);
     } catch (error) {
       console.log(error);
     }
   };
   // console.log(setMoviesComedy);
+
+
+  const selectMovie = async (movie) => {
+    try{
+
+      props.dispatch({type:ADD_MOVIE, payload: movie});
+      setTimeout(() => {
+        history.push('/infomovie');
+      }, 500);
+      
+
+
+  }catch (err){
+       console.log(err);      
+       }      
+
+  }
 
   if (moviesComedy === "") {
     return <div>cargando</div>;
@@ -46,6 +69,7 @@ const ScrollComedy = (props) => {
                   className="imgMovie"
                   src={`${baseImgUrl}/${size}${TopComedy.poster_path}`}
                   alt="poster_path"
+                  onClick={()=> selectMovie(TopComedy)} 
                 />
               }
             >
@@ -57,5 +81,8 @@ const ScrollComedy = (props) => {
     );
   }
 };
-
-export default ScrollComedy;
+export default connect((state) => ({ 
+  credentials:state.credentials,
+  movies:state.movies
+  
+}))(ScrollComedy);

@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import moment from "moment";
 import axios from "axios";
 
+
 const RentMovie = (props) => {
   let history = useHistory();
 
@@ -40,6 +41,10 @@ const RentMovie = (props) => {
     .catch((error) => {
       console.log(error);
     });
+      
+    setTimeout(() => {
+      history.push("/");
+    }, 2000);
   };
 
   const baseImgUrl = "https://image.tmdb.org/t/p";
