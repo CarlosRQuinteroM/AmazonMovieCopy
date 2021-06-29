@@ -32,4 +32,8 @@ const Home = (props) => {
     );
   }
 };
-export default connect() (Home);
+export default connect((state) => ({
+  credentials: state.credentials,
+  movies: state.movies,
+  ordersRent :state.ordersRent,
+}))(Home);

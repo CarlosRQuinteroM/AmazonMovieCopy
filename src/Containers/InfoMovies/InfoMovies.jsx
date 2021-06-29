@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { ADD_MOVIE } from "../../redux/type"
+// import { ADD_MOVIE } from "../../redux/type"
 
 const InfoMovies = (props) => {
   let history = useHistory();
@@ -13,7 +13,7 @@ const InfoMovies = (props) => {
   const Alquiler = (movie) => {
     try{
 
-      props.dispatch({type:ADD_MOVIE, payload: movie});
+      // props.dispatch({type:ADD_MOVIE, payload: movie});
       setTimeout(() => {
         history.push('/rentmovie');
       }, 500);

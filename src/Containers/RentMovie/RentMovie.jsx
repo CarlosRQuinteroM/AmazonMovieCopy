@@ -3,13 +3,11 @@ import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import moment from "moment";
 import axios from "axios";
-
+import { ADD_RENT } from "../../redux/type";
 
 const RentMovie = (props) => {
   let history = useHistory();
-
-  const today = moment().format("YYYY-MM-DD")
-  // const returnDay =  datosUser.returnDate;
+  const today = moment().format("YYYY-MM-DD");
 
   const [datosUser, setDatosUser] = useState({
     returnDate: "",
@@ -21,7 +19,6 @@ const RentMovie = (props) => {
   };
 
   const ejecutaRegistro = async () => {
-
     let token = props.credentials.token;
 
     let body = {
@@ -29,30 +26,37 @@ const RentMovie = (props) => {
       idMovie: props.movies.id,
       movieTitle: props.movies.title,
       returnDate: datosUser.returnDate,
-      rentalDate : today,
-      posterMovie:props.movies.poster_path, 
+      rentalDate: today,
+      posterMovie: props.movies.poster_path,
     };
 
     console.log(body);
 
     axios
-    .post("http://localhost:3005/orders/", body, {headers:{'authorization':'Bearer ' + token}})
-    .then((res) => {})
-    .catch((error) => {
-      console.log(error);
-    });
-      
+      .post("http://localhost:3005/orders/", body, {
+        headers: { authorization: "Bearer " + token },
+      })
+      .then((res) => {})
+      .catch((error) => {
+        console.log(error);
+      });
+
+    props.dispatch({ type: ADD_RENT, payload: body });
+
     setTimeout(() => {
       history.push("/");
     }, 2000);
   };
 
+
+  //links IMG Poster 
   const baseImgUrl = "https://image.tmdb.org/t/p";
   const size = "w1280";
   const sizePoster = "w200";
-  // console.log(props.movies.id);
+ 
 
   if (!props.credentials?.token) {
+
     setTimeout(() => {
       history.push("/login");
     }, 3000);
@@ -61,6 +65,8 @@ const RentMovie = (props) => {
       <div>Inicia secion para difrutar del mejor alquiler de peliculas</div>
       // tengo que crear una tarjeta que se vea mejor que el parrafo
     );
+
+    
   } else {
     return (
       <div className="RentMovie">
@@ -119,4 +125,5 @@ const RentMovie = (props) => {
 export default connect((state) => ({
   credentials: state.credentials,
   movies: state.movies,
+  ordersRent: state.ordersRent,
 }))(RentMovie);

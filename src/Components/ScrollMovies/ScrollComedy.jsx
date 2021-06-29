@@ -62,16 +62,16 @@ const ScrollComedy = (props) => {
         {moviesComedy?.map((TopComedy) => {
           return (
             <Card
-              className="card"
-              key={TopComedy.id}
-              cover={
-                <img
-                  className="imgMovie"
-                  src={`${baseImgUrl}/${size}${TopComedy.poster_path}`}
-                  alt="poster_path"
-                  onClick={()=> selectMovie(TopComedy)} 
-                />
-              }
+            className="card"
+            key={TopComedy.id}
+            cover={
+              <img
+                className="imgMovie"
+                src={`${baseImgUrl}/${size}${TopComedy.poster_path}`}
+                alt="poster_path"
+                onClick={()=> selectMovie(TopComedy)} 
+              />
+            }
             >
             </Card>
           );
@@ -86,3 +86,4 @@ export default connect((state) => ({
   movies:state.movies
   
 }))(ScrollComedy);
+
