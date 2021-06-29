@@ -1,3 +1,8 @@
+.ScollHorizontal{
+  margin-top: 5em;
+}
+
+
 .scrolling-wrapper {
     // overflow-x: hidden;
     overflow-y: hidden;
@@ -7,17 +12,18 @@
     display: flex;
     flex-direction: row;
     align-items:inherit;
-    width: 90vw;
-    height: 20em;
+    width: 100vw;
+    height: 30em;
     border-radius: 1.5em;
 
   
 
     .card {
       display: inline-block;
-      background-color: rgb(54, 53, 53);
-      width: 15em;
-      border:solid 1em transparent;
+      background-color: transparent;
+      width: 16em;
+      height: 25em;
+      margin: 1em;
       &:hover{
         transform: scale(1.1);
         transition: 0.5s;
@@ -33,6 +39,7 @@
 
   .imgMovie{
     display: flex;
+    height: 23em;
     border-radius: 1em;
     justify-content: space-evenly;
 }

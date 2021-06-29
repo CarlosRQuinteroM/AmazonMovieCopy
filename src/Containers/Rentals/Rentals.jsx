@@ -1,15 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { Card } from "antd";
+import Moment from 'react-moment';
+import Spinner from "../../Components/Spinner/Spinner";
 import moment from "moment";
 
-// import { ADD_RENT } from '../../redux/type';
 
 const Rentals = (props) => {
-  const { Meta } = Card;
   let token = props.credentials.token;
-  // console.log(token)
 
   const [rentalUsers, setRentalUser] = useState([]);
 
@@ -19,9 +17,11 @@ const Rentals = (props) => {
   useEffect(() => {
     setTimeout(() => {
       getUserRentals();
-    }, 1000);
+    }, 1500);
   }, []);
+
   const getUserRentals = async () => {
+
     let body = {
       idUser: props.credentials.idUser,
     };
@@ -40,18 +40,23 @@ const Rentals = (props) => {
       console.log(error);
     }
   };
-  console.log(rentalUsers);
 
-  if (rentalUsers === "") {
+
+  if (rentalUsers === "vacio") {
     return (
-      <div>
-        <h3>
-          lo siento ${props.credentials.user.name} $
-          {props.credentials.user.last_name1} aun no tienes ningun alquiler.
-        </h3>
+      <div className="rentalsNone">
+        <h1 classNam="rentalNoneText" >
+          lo siento {props.credentials.user.name} {props.credentials.user.last_name1} aun no tienes ningun alquiler.
+        </h1>
       </div>
     );
-  } else {
+  }else if (!rentalUsers[0]?.idUser) {
+    return(
+      <div className="spinner">
+      <Spinner/>
+    </div>
+    )
+  }else  {
     return (
       <div className="allOrders">
         <div className="orderContent">
@@ -61,7 +66,9 @@ const Rentals = (props) => {
                 src={`${baseImgUrl}/${size}${rentalUsers.posterMovie}`}
                 alt="poster"
               />
+              
               <div className="info">
+
                 <h2>{rentalUsers.movieTitle}</h2>
 
                 <h3 className="order">
@@ -72,15 +79,8 @@ const Rentals = (props) => {
                   
                   Return Date : {moment(rentalUsers.returnDate).format("LL")}
                 </p>
-              </div>
-              <div className="buttons1">
-                {/* <div
-                      className="buttonUpdateA"
-                      onClick={() => saveAppointment(order)}
-                  >
-                      UPDATE
-                  </div> */}
-                {/* <div className="buttonDeleteA" onClick={() => deleteAppointment(order)}>REMOVE</div> */}
+                {console.log(rentalUsers?.returnDate)}
+                <h3>Rental time left: <br></br> <b> <Moment date={rentalUsers.returnDate} durationFromNow/> </b> </h3>
               </div>
             </div>
           ))}
@@ -88,8 +88,6 @@ const Rentals = (props) => {
       </div>
     );
   }
-
-  console.log();
 };
 
 export default connect((state) => ({

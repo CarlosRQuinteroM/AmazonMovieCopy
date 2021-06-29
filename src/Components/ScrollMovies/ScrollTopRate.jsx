@@ -59,8 +59,8 @@ const ScrollTopRate = (props) => {
     return <div>cargando</div>;
   } else {
     return (
-         <div>
-             <h3 id="titleScroll">TopRate</h3>
+         <div className="ScollHorizontal">
+             <h1 id="titleScroll">TopRate</h1>
       <div className="scrolling-wrapper">
         {/* {console.log(moviesTopRate)} */}
         {moviesTopRate?.map((TopRate) => {

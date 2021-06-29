@@ -45,8 +45,8 @@ const ScrollWar = (props) => {
     return <div>cargando</div>;
   } else {
     return (
-      <div>
-        <h3 id="titleScroll">War</h3>
+      <div className="ScollHorizontal">
+        <h1 id="titleScroll">War</h1>
         <div className="scrolling-wrapper">
           {moviesWar?.map((TopWar) => {
             return (
