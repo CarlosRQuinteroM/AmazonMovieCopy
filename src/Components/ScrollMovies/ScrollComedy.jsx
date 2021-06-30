@@ -9,8 +9,6 @@ import { useHistory } from "react-router-dom";
 const ScrollComedy = (props) => {
   let history = useHistory();
   const [moviesComedy, setMoviesComedy] = useState([]);
-
-
   const baseImgUrl = "https://image.tmdb.org/t/p";
   const size = "w200";
 

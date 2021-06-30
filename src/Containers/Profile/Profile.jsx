@@ -52,7 +52,7 @@ const Profile = (props) => {
       </div>
     );
   } else {
-    console.log(props.credentials?.user);
+   // console.log(props.credentials?.user);
     setTimeout(() => {
       history.push("/");
     }, 3000);

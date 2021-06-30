@@ -30,7 +30,7 @@ const RentMovie = (props) => {
       posterMovie: props.movies.poster_path,
     };
 
-    console.log(body);
+    //console.log(body);
 
     axios
       .post("http://localhost:3005/orders/", body, {
@@ -51,7 +51,7 @@ const RentMovie = (props) => {
 
   //links IMG Poster 
   const baseImgUrl = "https://image.tmdb.org/t/p";
-  const size = "w1280";
+  // const size = "w1280";
   const sizePoster = "w200";
  
 
@@ -73,7 +73,7 @@ const RentMovie = (props) => {
         <h1 id="rentaltitle">Rental Movie</h1>
         <img
           className="backdrop_path"
-          src={`${baseImgUrl}/${size}${props.movies.backdrop_path}`}
+          src={`${baseImgUrl}/original${props.movies.backdrop_path}`}
           alt="backdrop_path"
         ></img>
         <div className="infoRentMovie">

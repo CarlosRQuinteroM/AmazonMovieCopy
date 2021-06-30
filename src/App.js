@@ -8,6 +8,7 @@ import Login from './Containers/Login/Login';
 import Profile from './Containers/Profile/Profile';
 import Register from './Containers/Register/Register';
 import Rentals from './Containers/Rentals/Rentals';
+import RentalVideo from './Containers/RentalVideo/RentalVideo';
 import RentMovie from './Containers/RentMovie/RentMovie';
 
 
@@ -25,7 +26,8 @@ function App() {
         <Route path="/profile" exact component={Profile} />
         <Route path='/infomovie' exact component={InfoMovies}/>
         <Route path='/rentmovie' exact component={RentMovie}/>
-        <Route path='/rentals' axact component={Rentals}/>
+        <Route path='/rentals' axact component={Rentals}/>\
+        <Route path='/rentalvideo' exact component={RentalVideo}/>
         
         
         

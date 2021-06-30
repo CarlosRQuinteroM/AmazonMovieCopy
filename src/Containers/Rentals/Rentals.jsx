@@ -4,9 +4,12 @@ import { connect } from "react-redux";
 import Moment from 'react-moment';
 import Spinner from "../../Components/Spinner/Spinner";
 import moment from "moment";
+import { useHistory } from "react-router-dom";
+
 
 
 const Rentals = (props) => {
+  let history = useHistory()
   let token = props.credentials.token;
 
   const [rentalUsers, setRentalUser] = useState([]);
@@ -40,6 +43,11 @@ const Rentals = (props) => {
       console.log(error);
     }
   };
+  const VerPeliculas = () => {
+        setTimeout(() => {
+          history.push('/rentalVideo')
+        },500);
+  } 
 
 
   if (rentalUsers === "vacio") {
@@ -79,8 +87,10 @@ const Rentals = (props) => {
                   
                   Return Date : {moment(rentalUsers.returnDate).format("LL")}
                 </p>
-                {console.log(rentalUsers?.returnDate)}
                 <h3>Rental time left: <br></br> <b> <Moment date={rentalUsers.returnDate} durationFromNow/> </b> </h3>
+                <div className="VerPelicula" onClick={()=> VerPeliculas() }>
+                  Ver Pelicula.
+                </div>
               </div>
             </div>
           ))}

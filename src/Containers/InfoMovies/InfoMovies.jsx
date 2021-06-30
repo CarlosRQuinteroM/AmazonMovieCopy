@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 const InfoMovies = (props) => {
   let history = useHistory();
   const baseImgUrl = "https://image.tmdb.org/t/p";
-  const size = "w1280";
+  // const size = "w1280";
   const sizePoster = "w200";
 
   const Alquiler = (movie) => {
@@ -18,8 +18,6 @@ const InfoMovies = (props) => {
         history.push('/rentmovie');
       }, 500);
       
-
-
   }catch (err){
        console.log(err);      
        }      
@@ -28,12 +26,12 @@ const InfoMovies = (props) => {
   
 
   if (props.movies !== "") {
-    {console.log(props.movies)}
+    // {console.log(props.movies)}
     return (
       <div className="selectMovie">
         <img
           className="backdrop_path"
-          src={`${baseImgUrl}/${size}${props.movies.backdrop_path}`}
+          src={`${baseImgUrl}/original${props.movies.backdrop_path}`}
           alt="backdrop_path"
         ></img>
         <div className="infoSelectMovie">
