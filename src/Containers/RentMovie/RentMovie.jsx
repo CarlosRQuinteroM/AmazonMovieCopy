@@ -90,7 +90,6 @@ const RentMovie = (props) => {
             </h2>
 
             <h4 name="userName">
-              {" "}
               nombre : {props.credentials.user.name}{" "}
               {props.credentials.user.last_name1}
             </h4>
@@ -105,15 +104,11 @@ const RentMovie = (props) => {
               placeholder="Fecha de entrega :"
               onchange="this.className=(this.value!=''?'has-value':'')"
             ></input>
-
-            {/* <p> Return in: {moment(today, returnDay).fromNow()}</p> */}
-            {/* esto  cuenta cuantos son los  los dias de alquiler  */}
           </div>
           <div
             id="Botom"
             className="newUserBoton"
-            onClick={() => ejecutaRegistro()}
-          >
+            onClick={() => ejecutaRegistro()}>
             Enviar
           </div>
         </div>
