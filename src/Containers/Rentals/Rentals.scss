@@ -4,55 +4,73 @@
   box-sizing: border-box;
 }
 .allOrders {
-  width: 100vw;
-  height: 100vh;
+  width: 98.9vw;
+  height: 100%;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   background-color: black;
 
+
   .orderContent {
-      width: 100vw;
-      height: 100%;
-      margin-top: 2em;
-      margin-bottom: 3em;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
+    width: 100vw;
+    height: 100%;
+    margin-top: 2em;
+    margin-bottom: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
   .orderCards {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-      width: 21em;
-      margin: 2em;
-      color: white;
-      border: 1.7px solid #525252;
-      border-radius: 1em;
-      background-color:hsla(220, 2%, 30%, 0.529);
-      &:hover {
-          // opacity: 0.5;
-          transform: scale(1.06);
-          transition: 0.5s;
-      }
-      .info {
-          margin-top: 1em;
-      }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 21em;
+    margin: 2em;
+    color: white;
+    border: 1.7px solid #525252;
+    border-radius: 1em;
+    background-color: hsla(220, 2%, 30%, 0.529);
+    &:hover {
+      // opacity: 0.5;
+      transform: scale(1.02);
+      transition: 0.8s;
+    }
+    .info {
+      margin-top: 1em;
+    }
   }
+ 
   .order {
-      // margin-left: 1em;
-      line-height: 2.2;
+    // margin-left: 1em;
+    line-height: 2.2;
+  }
+  .VerPelicula {
+    display: flex;
+    position: relative;
+    align-content: flex-end;
+    border-radius: 1em;
+    color: rgb(228, 228, 228);
+    left: 10em;
+    align-items: center;
+    width: 6em;
+    height: 3em;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.3);
+        transition: 0.5s;
+    }
   }
 }
 
-.rentalsNone{
-    background-color: black;
-    width: 100vw;
-    height: 100vh;
-    color: rgb(255, 255, 255);
+.rentalsNone {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  color: rgb(255, 255, 255);
 }
 

@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 
 const RentalVideo = (props) => {
   let history = useHistory();
-
   let token = props.credentials.token;
   let movie_id = props.ordersRent?.idMovie;
 
@@ -21,7 +20,7 @@ const RentalVideo = (props) => {
     }, 500);
   }, []);
 
-  console.log(props.ordersRent)
+  // console.log(props.ordersRent)
 
   const video = async () => {
     try {
@@ -37,7 +36,7 @@ const RentalVideo = (props) => {
     }
   };
 
-  console.log(videoMovie);
+  // console.log(videoMovie);
   // console.log(videoMovie[0]?.key)
 
   if (!token) {
@@ -52,10 +51,9 @@ const RentalVideo = (props) => {
     );
   } else {
       let key = videoMovie[0]?.key;
-      console.log(key)
     return (
-      <div>
-        <iframe title="Trailer" width="80%" height="100%" src={`https://www.youtube.com/embed/${key}`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+      <div className="videoframe">
+        <iframe title="Trailer" width="100%" height="100%" src={`https://www.youtube.com/embed/${key}`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
       </div>
     );
@@ -66,7 +64,3 @@ export default connect((state) => ({
   credentials: state.credentials,
   ordersRent: state.ordersRent,
 }))(RentalVideo);
-
-//https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=<<api_key>>&language=en-US
-
-{/* <iframe title="Trailer" src="https://www.youtube.com/embed/{}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe> */}

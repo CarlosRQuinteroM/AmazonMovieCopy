@@ -6,6 +6,8 @@ import Spinner from "../../Components/Spinner/Spinner";
 import moment from "moment";
 import { useHistory } from "react-router-dom";
 import { ADD_RENT } from "../../redux/type";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faPlayCircle} from "@fortawesome/free-solid-svg-icons";
 
 const Rentals = (props) => {
   let history = useHistory();
@@ -75,6 +77,7 @@ const Rentals = (props) => {
                 alt="poster"
               />
               <div className="info">
+
                 <h2>{rentalUsers.movieTitle}</h2>
 
                 <h3 className="order">
@@ -89,11 +92,13 @@ const Rentals = (props) => {
                     <Moment date={rentalUsers.returnDate} durationFromNow />
                   </b>
                 </h3>
-                <div
-                  className="VerPelicula"
-                  onClick={() => VerPeliculas(rentalUsers)}
-                >
-                  Ver Pelicula.
+
+                <div>
+                  <FontAwesomeIcon
+                    icon={faPlayCircle}
+                    className="VerPelicula"
+                    onClick={() => VerPeliculas(rentalUsers)}
+                  />
                 </div>
               </div>
             </div>
