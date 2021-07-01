@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import moment from "moment";
 import axios from "axios";
 import { ADD_RENT } from "../../redux/type";
+import ScrollTrending from "../../Components/ScrollMovies/ScrollTrending";
 
 const RentMovie = (props) => {
   let history = useHistory();
@@ -113,6 +114,7 @@ const RentMovie = (props) => {
           </div>
         </div>
       </div>
+        
     );
   }
 };
