@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card } from "antd";
-import { connect } from 'react-redux'
-import { ADD_MOVIE } from "../../redux/type"
+import { connect } from "react-redux";
+import { ADD_MOVIE } from "../../redux/type";
 import { useHistory } from "react-router-dom";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const ScrollComedy = (props) => {
   let history = useHistory();
@@ -25,7 +26,7 @@ const ScrollComedy = (props) => {
       );
       setMoviesComedy(res.data.results);
 
-      props.dispatch({ type: ADD_MOVIE , payload: res.data.results });
+      props.dispatch({ type: ADD_MOVIE, payload: res.data.results });
       // console.log(res.data.results);
     } catch (error) {
       console.log(error);
@@ -33,55 +34,52 @@ const ScrollComedy = (props) => {
   };
   // console.log(setMoviesComedy);
 
-
   const selectMovie = async (movie) => {
-    try{
-
-      props.dispatch({type:ADD_MOVIE, payload: movie});
+    try {
+      props.dispatch({ type: ADD_MOVIE, payload: movie });
       setTimeout(() => {
-        history.push('/infomovie');
+        history.push("/infomovie");
       }, 500);
-      
-
-
-  }catch (err){
-       console.log(err);      
-       }      
-
-  }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   if (moviesComedy === "") {
     return <div>cargando</div>;
   } else {
     return (
-         <div className="ScollHorizontal">
-             <h1 id="titleScroll">Comedy</h1>
-      <div className="scrolling-wrapper">
-        {moviesComedy?.map((TopComedy) => {
-          return (
-            <Card
-            className="card"
-            key={TopComedy.id}
-            cover={
-              <img
-                className="imgMovie"
-                src={`${baseImgUrl}/${size}${TopComedy.poster_path}`}
-                alt="poster_path"
-                onClick={()=> selectMovie(TopComedy)} 
-              />
-            }
-            >
-            </Card>
-          );
-        })}
-      </div>
+      <div className="ScollHorizontal">
+        <h1 id="titleScroll">Comedy</h1>
+        <div className="scrolling-wrapper">
+          {moviesComedy?.map((TopComedy) => {
+            return (
+              <Card
+                className="card"
+                key={TopComedy.id}
+                cover={
+                  <img
+                    className="imgMovie"
+                    src={`${baseImgUrl}/${size}${TopComedy.poster_path}`}
+                    alt="poster_path"
+                    onClick={() => selectMovie(TopComedy)}
+                  />
+                }
+              >
+                <div className="voteAverage">
+                  {/* <p>{TopComedy.title}</p> */}
+                  <FontAwesomeIcon className="faStart" icon={faStar} />
+                  {TopComedy.vote_average}/10
+                </div>
+              </Card>
+            );
+          })}
+        </div>
       </div>
     );
   }
 };
-export default connect((state) => ({ 
-  credentials:state.credentials,
-  movies:state.movies
-  
+export default connect((state) => ({
+  credentials: state.credentials,
+  movies: state.movies,
 }))(ScrollComedy);
-

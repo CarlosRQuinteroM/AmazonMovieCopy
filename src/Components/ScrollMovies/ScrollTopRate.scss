@@ -24,12 +24,25 @@
       width: 16em;
       height: 25em;
       margin: 1em;
+      color: white;
+      cursor: pointer;
       &:hover{
         transform: scale(1.1);
         transition: 0.5s;
     }
-      
+      .voteAverage{
+        display:flex;
+        align-items: flex-start;
+        position: absolute;
+        width: 15em;
+        height: 3em;
+        text-align:unset;
+        flex-direction: column;
+      }
     }
+    .faStart{
+      color: goldenrod;
+  }
   }
   // .scrolling-wrapper { 
   //   -webkit-overflow-scrolling:touch; 

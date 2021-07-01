@@ -4,6 +4,8 @@ import { Card } from "antd";
 import { connect } from "react-redux";
 import { ADD_MOVIE } from "../../redux/type";
 import { useHistory } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const ScrollWar = (props) => {
   let history = useHistory();
@@ -61,7 +63,13 @@ const ScrollWar = (props) => {
                     onClick={() => selectMovie(TopWar)}
                   />
                 }
-              ></Card>
+              >
+                <div className="voteAverage">
+                  {/* <p>{TopWar.title}</p> */}
+                  <FontAwesomeIcon className="faStart" icon={faStar} />
+                  {TopWar.vote_average}/10
+                </div>
+              </Card>
             );
           })}
         </div>
