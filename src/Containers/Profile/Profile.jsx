@@ -13,7 +13,6 @@ const Profile = (props) => {
       <div className="bodyProfile">
         <div className="cardProfile">
           <div className="profile">
-            {" "}
             <img className="imgProfile"  src={!props.credentials.user.imgUser ? profilePic : props.credentials.user.imgUser } alt="imgUser"/>
           </div>
           <div className="textProfile">

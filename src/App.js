@@ -10,6 +10,7 @@ import Register from './Containers/Register/Register';
 import Rentals from './Containers/Rentals/Rentals';
 import RentalVideo from './Containers/RentalVideo/RentalVideo';
 import RentMovie from './Containers/RentMovie/RentMovie';
+import searchByTitleView from './Containers/searchByTitleView/searchByTitleView';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path='/rentmovie' exact component={RentMovie}/>
         <Route path='/rentals' axact component={Rentals}/>\
         <Route path='/rentalvideo' exact component={RentalVideo}/>
+        <Route path="/searchview" exact component={searchByTitleView}/>
         
         
         
