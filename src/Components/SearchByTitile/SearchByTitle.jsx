@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { ADD_MOVIE } from '../../redux/type';
 import axios from "axios";
+import { Input } from 'antd';
 
 const SearchByTitle = (props) => {
   let history = useHistory();
@@ -26,9 +27,9 @@ const SearchByTitle = (props) => {
       })
       .catch(() => {return Error("Lo siento pelicula no la tenemos disponible");});
   };
-      console.log(movie);
+      // console.log(movie);
   return (
-    <div><input className="option" type="text" id="title" name="name" onClick={() => findTitle(updateDatos)}/></div>
+    <div><Input className="option" type="text" id="title" name="name"  placeholder="Busca peliculas" onClick={() => findTitle(updateDatos)}/></div>
   );
 };
 export default connect((state) => ({ credentials: state.credentials,movies: state.movies}))(SearchByTitle);
