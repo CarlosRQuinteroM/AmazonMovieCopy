@@ -23,7 +23,6 @@ const Header = (props) => {
     return (
       <div className="headerBody">
         <SearchByTitle/>
-
         <Boton lugar="/rentals" destino="My Rentals" onClick={() => takeMe("/")} />
 
 
@@ -38,7 +37,6 @@ const Header = (props) => {
             }
             alt="imgUser"
           />
-          {/* <img className="imgUser"  src={profilePic} alt="imgUser"/> */}
         </div>
 
         <div onClick={() => logOut("/")}>

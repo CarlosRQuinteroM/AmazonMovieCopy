@@ -1,63 +1,63 @@
-.ScollHorizontal{
+.ScollHorizontal::-webkit-scrollbar-track {
   margin-top: 5em;
+  background: #333232;
+  border-radius: 4px;
+  &:-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
-
+}
 
 .scrolling-wrapper {
-    // overflow-x: hidden;
-    overflow-y: hidden;
-    white-space: nowrap;
-    position: relative;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    align-items:inherit;
-    width: 100vw;
-    height: 30em;
-    border-radius: 1.5em;
+  // overflow-x: hidden;
+  white-space: nowrap;
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: inherit;
+  width: 100vw;
+  height: 30em;
+  border-radius: 1.5em;
 
-  
-
-    .card {
-      display: inline-block;
-      background-color: transparent;
-      width: 16em;
-      height: 25em;
-      margin: 1em;
-      color: white;
-      cursor: pointer;
-      &:hover{
-        transform: scale(1.1);
-        transition: 0.5s;
+  .card {
+    display: inline-block;
+    background-color: transparent;
+    width: 16em;
+    height: 25em;
+    margin: 1em;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.5s;
     }
-      .voteAverage{
-        display:flex;
-        align-items: flex-start;
-        position: absolute;
-        width: 15em;
-        height: 3em;
-        text-align:unset;
-        flex-direction: column;
-      }
+    .voteAverage {
+      display: flex;
+      align-items: flex-start;
+      position: absolute;
+      width: 15em;
+      height: 3em;
+      text-align: unset;
+      flex-direction: column;
     }
-    .faStart{
-      color: goldenrod;
   }
+  .faStart {
+    color: goldenrod;
   }
-  // .scrolling-wrapper { 
-  //   -webkit-overflow-scrolling:touch; 
+}
+// .scrolling-wrapper {
+//   -webkit-overflow-scrolling:touch;
 
-  // }
+// }
 
-
-  .imgMovie{
-    display: flex;
-    height: 23em;
-    border-radius: 1em;
-    justify-content: space-evenly;
+.imgMovie {
+  display: flex;
+  height: 23em;
+  border-radius: 1em;
+  justify-content: space-evenly;
 }
 
-#titleScroll{
+#titleScroll {
   color: rgb(246, 237, 218);
-
 }
