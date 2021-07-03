@@ -1,76 +1,67 @@
-
 .formularios {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 6em;
+  justify-content: center;
+  .formulario1 {
     display: flex;
-      align-items: center;
-      background-color: rgb(44, 44, 44);
-      border-radius: 5px;
+    flex-direction: column;
+    position: relative;
+  }
+  .inputBase {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    border: 0;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.4);
+  }
 
-      justify-content: center;
+  &[type=submit] {
+    margin: 3em;
+    width: 16em;
+    border: 0;
+    position: relative;
+    background-color: #101115;
+    border-radius: 5px;
+    height: 3em;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    font-size: 1em;
+    z-index: 1;
   }
-  
-  .formulario1{
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      margin-top: 6em;
-  
+
+  [type="submit"]:hover {
+    background-color: #ffa700;
+    transition: 0.3s;
   }
-  
-  .inputBase{
-      display: block;
-      margin: 0 auto;
-      width: 80%;
-      border: 0;
-      border-bottom: 1px solid rgb(0, 0, 0);
-      height: 45px;
-      line-height: 45px;  
-      margin-bottom: 10px;
-      font-size: 1em;
-      color: rgba(0,0,0,.4);
-  
+
+  .inputBase:focus {
+    outline: none;
+    border-color: #ffa700;
   }
-    [type=submit] {
-      margin: 3em;
-      width: 16em;
-      border: 0;
-      position: relative;
-      background-color: #101115;
-      border-radius: 5px;
-      height: 3em;
-      color: rgb(255, 255, 255);
-      font-weight: 400;
-      font-size: 1em;
-      z-index: 1;
-      
-    }
-    [type=submit]:hover{
-  
-      background-color:#724f0e;
-      transition: 0.3s;
-    }
-  
-  
-    
-    .inputBase:focus {
-      outline: none;
-      border-color: #724f0e;
-    }
-  
-    .textRight{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-bottom: 5em;
-      
-    }
-  
-    .botonRegister{
-      display: flex;
-      position: relative;
-      bottom: 1.9em;
-    }
-  
-  .error{
+
+  .textRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5em;
+  }
+
+  .botonRegister {
+    display: flex;
+    position: relative;
+    bottom: 1.9em;
+  }
+
+  .error {
     color: red;
   }
+}

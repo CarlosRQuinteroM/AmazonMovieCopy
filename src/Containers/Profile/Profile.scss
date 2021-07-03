@@ -1,25 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 .bodyProfile {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  padding-top: 8em;
-  margin: 2em;
+  width: 100vw;
+  height: 45vw;
   background-color: rgb(58, 57, 57);
 
   .profile {
     display: flex;
-    height: 5em;
-    width: 5em;
+    height: 10em;
+    width: 10em;
     border-radius: 50%;
     background-color: white;
     flex-direction: row;
     justify-content: flex-end;
     align-items: flex-start;
-    bottom: 1em;
     .imgProfile {
-        width: 5em;
-        height: 5em;
+        width: 10em;
+        height: 10em;
         border-radius: 5em;
       }
   }
@@ -27,11 +33,10 @@
   
   .cardProfile {
     display: flex;
-    height: 25em;
-    width: 22em;
-    border-radius: 5px;
+    height: 30em;
+    width: 30em;
+    border-radius: 1em;
     background-color: #f0f0f0;
-    padding: 2em;
     font-size: medium;
     justify-content: center;
     align-items: center;
@@ -45,24 +50,3 @@
   justify-content: row;
 }
 
-//   .botonLogOut {
-//     display: flex;
-//     width: 25em;
-//     border: 0;
-//     position: relative;
-//     background-color: #101115;
-//     border-radius: 5px;
-//     height: 3em;
-//     color: rgb(255, 255, 255);
-//     font-weight: 400;
-//     font-size: 1em;
-//     margin-top: 2em;
-//     flex-direction: row;
-//     justify-content: center;
-//     align-items: center;
-//   }
-
-//   .botonLogOut:hover {
-//     background-color: red;
-//     transition: 0.2s;
-//   }

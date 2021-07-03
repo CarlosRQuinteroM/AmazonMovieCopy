@@ -7,26 +7,24 @@ import { useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-const ScrollTopRate = (props) => {
+const ScrollComedy = (props) => {
   let history = useHistory();
-
-  const [moviesTopRate, setMoviesTopRate] = useState([]);
-
+  const [moviesTrending, setMoviesTrending] = useState([]);
   const baseImgUrl = "https://image.tmdb.org/t/p";
   const size = "w200";
 
   useEffect(() => {
     setTimeout(() => {
-      findTopRated();
+      findComedyMovie();
     }, 500);
   }, []);
 
-  const findTopRated = async () => {
+  const findComedyMovie = async () => {
     try {
       let res = await axios.get(
-        "https://api.themoviedb.org/3/movie/top_rated?api_key=210d6a5dd3f16419ce349c9f1b200d6d&language=en-US&page=2"
+        "https://api.themoviedb.org/3/trending/movie/week?api_key=210d6a5dd3f16419ce349c9f1b200d6d"
       );
-      setMoviesTopRate(res.data.results);
+      setMoviesTrending(res.data.results);
 
       props.dispatch({ type: ADD_MOVIE, payload: res.data.results });
       // console.log(res.data.results);
@@ -34,8 +32,7 @@ const ScrollTopRate = (props) => {
       console.log(error);
     }
   };
-  // console.log(setMoviesTopRate);
-  console.log(moviesTopRate);
+  // console.log(setMoviesComedy);
 
   const selectMovie = async (movie) => {
     try {
@@ -48,32 +45,31 @@ const ScrollTopRate = (props) => {
     }
   };
 
-  if (moviesTopRate === "") {
+  if (moviesTrending === "") {
     return <div>cargando</div>;
   } else {
     return (
       <div className="ScollHorizontal">
-        <h1 id="titleScroll">TopRate</h1>
+        <h1 id="titleScroll">Trending</h1>
         <div className="scrolling-wrapper">
-          {/* {console.log(moviesTopRate)} */}
-          {moviesTopRate?.map((TopRate) => {
+          {moviesTrending?.map((TopTrending) => {
             return (
               <Card
                 className="card"
-                key={TopRate.id}
+                key={TopTrending.id}
                 cover={
                   <img
                     className="imgMovie"
-                    src={`${baseImgUrl}/${size}${TopRate.poster_path}`}
+                    src={`${baseImgUrl}/${size}${TopTrending.poster_path}`}
                     alt="poster_path"
-                    onClick={() => selectMovie(TopRate)}
+                    onClick={() => selectMovie(TopTrending)}
                   />
                 }
               >
                 <div className="voteAverage">
-                  {/* <p>{TopRate.title}</p> */}
+                  {/* <p>{TopComedy.title}</p> */}
                   <FontAwesomeIcon className="faStart" icon={faStar} />
-                  {TopRate.vote_average}/10
+                  {TopTrending.vote_average}/10
                 </div>
               </Card>
             );
@@ -83,8 +79,7 @@ const ScrollTopRate = (props) => {
     );
   }
 };
-
 export default connect((state) => ({
   credentials: state.credentials,
   movies: state.movies,
-}))(ScrollTopRate);
+}))(ScrollComedy);

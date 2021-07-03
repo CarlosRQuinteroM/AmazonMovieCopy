@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card } from "antd";
-
+import { connect } from "react-redux";
+import { ADD_MOVIE } from "../../redux/type";
+import { useHistory } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const ScrollWar = (props) => {
+  let history = useHistory();
   const [moviesWar, setMoviesWar] = useState([]);
-
 
   const baseImgUrl = "https://image.tmdb.org/t/p";
   const size = "w200";
 
   useEffect(() => {
     setTimeout(() => {
-        finWarMovie();
+      finWarMovie();
     }, 500);
   }, []);
 
@@ -28,33 +32,53 @@ const ScrollWar = (props) => {
     }
   };
 
+  const selectMovie = async (movie) => {
+    try {
+      props.dispatch({ type: ADD_MOVIE, payload: movie });
+      setTimeout(() => {
+        history.push("/infomovie");
+      }, 500);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   if (moviesWar === "") {
     return <div>cargando</div>;
   } else {
     return (
-         <div>
-             <h3 id="titleScroll">War</h3>
-      <div className="scrolling-wrapper">
-        {moviesWar?.map((TopWar) => {
-          return (
-            <Card
-              className="card"
-              key={TopWar.id}
-              cover={
-                <img
-                  className="imgMovie"
-                  src={`${baseImgUrl}/${size}${TopWar.poster_path}`}
-                  alt="poster_path"
-                />
-              }
-            >
-            </Card>
-          );
-        })}
-      </div>
+      <div className="ScollHorizontal">
+        <h1 id="titleScroll">War</h1>
+        <div className="scrolling-wrapper">
+          {moviesWar?.map((TopWar) => {
+            return (
+              <Card
+                className="card"
+                key={TopWar.id}
+                cover={
+                  <img
+                    className="imgMovie"
+                    src={`${baseImgUrl}/${size}${TopWar.poster_path}`}
+                    alt="poster_path"
+                    onClick={() => selectMovie(TopWar)}
+                  />
+                }
+              >
+                <div className="voteAverage">
+                  {/* <p>{TopWar.title}</p> */}
+                  <FontAwesomeIcon className="faStart" icon={faStar} />
+                  {TopWar.vote_average}/10
+                </div>
+              </Card>
+            );
+          })}
+        </div>
       </div>
     );
   }
 };
 
-export default ScrollWar;
+export default connect((state) => ({
+  credentials: state.credentials,
+  movies: state.movies,
+}))(ScrollWar);

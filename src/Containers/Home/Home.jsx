@@ -5,6 +5,7 @@ import ScrollTopRate from "../../Components/ScrollMovies/ScrollTopRate"
 import ScrollComedy from "../../Components/ScrollMovies/ScrollComedy"
 import ScrollWar from "../../Components/ScrollMovies/ScrollWar"
 import { connect } from "react-redux";
+import ScrollWestern from "../../Components/ScrollMovies/ScrollWestern";
 
 
 
@@ -27,9 +28,14 @@ const Home = (props) => {
            <ScrollTopRate/>
            <ScrollComedy/>
            <ScrollWar/>
+           <ScrollWestern/>
 
       </div>
     );
   }
 };
-export default connect() (Home);
+export default connect((state) => ({
+  credentials: state.credentials,
+  movies: state.movies,
+  ordersRent :state.ordersRent,
+}))(Home);
