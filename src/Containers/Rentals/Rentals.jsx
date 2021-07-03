@@ -77,7 +77,6 @@ const Rentals = (props) => {
                 alt="poster"
               />
               <div className="info">
-
                 <h2>{rentalUsers.movieTitle}</h2>
 
                 <h3 className="order">
