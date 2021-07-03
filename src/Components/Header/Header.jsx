@@ -5,7 +5,7 @@ import { CLEAR_RENT, LOGOUT, DELETE_MOVIE } from "../../redux/type";
 import Boton from "../Boton/Boton";
 import profilePic from "../../img/profile.png";
 import SearchByTitle from "../SearchByTitile/SearchByTitle";
-
+import Logo from "../../img/logo.jpg";
 
 const Header = (props) => {
   let history = useHistory();
@@ -22,10 +22,15 @@ const Header = (props) => {
   if (props.credentials?.token !== "") {
     return (
       <div className="headerBody">
-        <SearchByTitle/>
-        <Boton lugar="/rentals" destino="My Rentals" onClick={() => takeMe("/")} />
-
-
+        <div>
+          <img className="logo" alt="logo" src={Logo} />
+        </div>
+        <SearchByTitle />
+        <Boton
+          lugar="/rentals"
+          destino="My Rentals"
+          onClick={() => takeMe("/")}
+        />
         <Boton lugar="/" destino="home" onClick={() => takeMe("/")} />
         <div onClick={() => takeMe("/profile")}>
           <img
