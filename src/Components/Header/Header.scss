@@ -21,6 +21,9 @@
   z-index: 100;
   .Boton {
     padding-right: 0em;
+    #icon{
+      width: 10em;
+    }
   }
   .logo {
     height: 3em;
@@ -31,15 +34,20 @@
     cursor: pointer;
     border-radius: 0.5em;
   }
+ 
+ 
+  
 }
 .imgUser {
   height: 3em;
   width: 3em;
+  border-right: 3em;
   border-radius: 50%;
   transition: 0.3s;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
     cursor: pointer;
     transition: 0.5s;
   }
 }
+

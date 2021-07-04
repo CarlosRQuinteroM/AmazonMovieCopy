@@ -6,6 +6,10 @@ import Boton from "../Boton/Boton";
 import profilePic from "../../img/profile.png";
 import SearchByTitle from "../SearchByTitile/SearchByTitle";
 import Logo from "../../img/logo.jpg";
+import { FaHome } from 'react-icons/fa';
+import { BiLogOut } from 'react-icons/bi';
+import {HiOutlineLogin} from 'react-icons/hi';
+import { BsCardChecklist }from 'react-icons/bs'
 
 const Header = (props) => {
   const userAdmin = props.credentials.user.isAdmin;
@@ -61,13 +65,13 @@ const Header = (props) => {
         <div>
           <img className="logo" alt="logo" src={Logo} />
         </div>
-        <SearchByTitle />
+        <SearchByTitle className="navBar" />
         <Boton
           lugar="/rentals"
           destino="My Rentals"
           onClick={() => takeMe("/")}
         />
-        <Boton lugar="/" destino="home" onClick={() => takeMe("/")} />
+        <Boton lugar="/"  destino={<FaHome id="icon"/>} onClick={() => takeMe("/")} />
         <div onClick={() => takeMe("/profile")}>
           <img
             className="imgUser"
@@ -80,7 +84,8 @@ const Header = (props) => {
           />
         </div>
         <div onClick={() => logOut("/")}>
-          <Boton lugar="/" destino="LogOut" />
+        
+          <Boton lugar="/" destino={<BiLogOut  id="icon"/>}/>
         </div>
       </div>
     );
@@ -91,13 +96,13 @@ const Header = (props) => {
   } else {
     return (
       <div className="headerBody">
-        <Boton lugar="/login" destino="Login" onClick={() => takeMe("/")} />
+        <Boton lugar="/login" destino={<HiOutlineLogin id="icon"/>} onClick={() => takeMe("/")} />
         <Boton
           lugar="/register"
-          destino="register"
+          destino={<BsCardChecklist id="icon"/>}
           onClick={() => takeMe("/")}
         />
-        <Boton lugar="/" destino="home" onClick={() => takeMe("/")} />
+        <Boton lugar="/" destino={<FaHome id="icon"/>}  onClick={() => takeMe("/")} />
       </div>
     );
   }
