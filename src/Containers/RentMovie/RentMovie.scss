@@ -1,14 +1,13 @@
 .RentMovie {
-  overflow-x:unset;
+  overflow-x: unset;
   overflow-x: unset;
   background-color: black;
   width: 99vw;
   height: 80vw;
-  // position: absolute;
+  position: absolute;
   align-items: center;
   align-content: center;
   left: 0;
-  
 
   .backdrop_path {
     // -webkit-filter: blur(5px);
@@ -23,17 +22,21 @@
     z-index: 0;
   }
   .infoRentMovie {
+    position: sticky;
     display: flex;
     align-items: center;
+    position: fixed;
+
     top: 23vw;
     // width: 75em;
     // height: 35em;
     left: 19em;
     color: rgb(39, 39, 39);
-    background-color: rgb(206, 206, 206);
+    background-color: rgb(73, 71, 71);
     z-index: 2;
     border-radius: 2em;
     padding-left: 1em;
+    color: rgb(200, 200, 200);
 
     .poster_path {
       margin-left: 1.5em;
@@ -41,7 +44,6 @@
       z-index: 4;
     }
     .RentPoster {
-
       padding-left: 1em;
       padding-top: -1em;
 
@@ -50,13 +52,12 @@
       }
       .RentPoster3 {
         align-items: flex-start;
-
       }
       .RentPoster4 {
         align-items: flex-start;
       }
     }
-    .newUserBoton{
+    .newUserBoton {
       align-items: flex-start;
       border: solid 1px rgb(148, 144, 144);
       border-radius: 2em;
@@ -71,8 +72,5 @@
         transform: scale(1.05);
       }
     }
-
-    
   }
 }
-

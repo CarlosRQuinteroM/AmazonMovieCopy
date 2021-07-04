@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# BOLLYWOOD
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="./src/img/bollywood.jpg" alt="Visual" width="500" height="250"/>
 
-## Available Scripts
 
-In the project directory, you can run:
+:speech_balloon: [About](#id1)   
 
-### `npm start`
+:hammer: [Tools](#id2)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+:clipboard: [Instructions](#id3)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+:eye_speech_bubble: [Phase I - Creating the Backend](#id4)
 
-### `npm test`
+:eye_speech_bubble: [Phase II - Creating the Backend](#id5)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+:mailbox: [Postman](#id6)
 
-### `npm run build`
+:smile: [Thanks](#id7)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<a name="id1"></a>
+ Bollywood is a movie rental app. Made with React.
+ Currently, the search for movies is done by connecting to the free Movie Database API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ The registration of the users as well as the orders made by them will be saved in our own DataBase created with Mysql.
 
-### `npm run eject`
+ This project is part of the [GeeksHubs Academy](https://bootcamp.geekshubsacademy.com/) Full Stack Developer Bootcamp.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ **Start date:** 25/ Jun /2021
+**Deadline:**  07 / July / 2021 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* **Author** ✒️  [Carlos Quintero Moreno](https://github.com/CarlosRQuinteroM)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<a name="id2"></a>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## **Tools**
+To create this project we worked with these tools and technologies:
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| <img src="/src/img/logovisual.png" alt="Visual" width="30"/> | Visual Studio Code |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| <img src="/src/img/javascript2.png" alt="JavaScript" width="30"/> | JavaScript | 
 
-### Code Splitting
+| <img src="/public/logo192.png" alt="HTML5" width="30"/> | REACT |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+| <img src="/src/img/scss.png" alt="scss" width="30"/> | AXIOS | 
 
-### Analyzing the Bundle Size
+| <img src="/src/img/git.png" alt="Git" width="30"/> | Git |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+| <img src="/src/img/github2.png" alt="GitHub" width="30"/> | GitHub | 
 
-### Making a Progressive Web App
+| <img src="/src/img/tmd.jpg" alt="GitHub" width="30"/> | The Movie Database API | 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## PLAY MOVIE
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+To run the project on your local machine for development and testing purposes you will need to install the following dependencies:
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```javascript
+npm init -y
+```
 
-### `npm run build` fails to minify
+```javascript
+npm i sass react-router-dom axios  antd react-redux react-slick slick-carousel moment
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To run the program on your local machine:
+```javascript
+npm start
+```
+
+#### Components 🔧
+ * Boton
+ * Footer
+ * Header
+ * Scroll
+ * ScrollMovies
+ * SearchByTitle
+ * Spinner
+
+ #### Containers 🔧
+ * /Admin
+ * /Home
+ * /InfoMovies
+ * /Login
+ * /Profile
+ * /Register
+ * /Rentals
+ * /RentalsVideo
+ * /RentalsMovie
+ * /SearchByTitleView
+
+
+  ## DEMO
+ *  [Video](https://vimeo.com/571006708)
