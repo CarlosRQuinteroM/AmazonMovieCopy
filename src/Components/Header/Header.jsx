@@ -8,6 +8,7 @@ import SearchByTitle from "../SearchByTitile/SearchByTitle";
 import Logo from "../../img/logo.jpg";
 
 const Header = (props) => {
+  const userAdmin = props.credentials.user.isAdmin;
   let history = useHistory();
   const takeMe = (were) => {
     history.push(were);
@@ -19,7 +20,42 @@ const Header = (props) => {
     props.dispatch({ type: CLEAR_RENT });
   };
 
-  if (props.credentials?.token !== "") {
+  if ( props.credentials?.token !== "" && userAdmin === true) {
+
+    return (
+      <div className="headerBody">
+        <div>
+          <img className="logo" alt="logo" src={Logo} />
+        </div>
+        <SearchByTitle />
+        <Boton
+          lugar="/rentals"
+          destino="My Rentals"
+          onClick={() => takeMe("/")}
+        />
+        <Boton lugar="/" destino="home" onClick={() => takeMe("/")} />
+        <Boton lugar="/7a8d9m0i1n2i3s4t5r6a7c8i9o0n" destino="Admin" onClick={() => takeMe("/")} />
+        <div onClick={() => takeMe("/profile")}>
+          <img
+            className="imgUser"
+            src={
+              !props.credentials.user.imgUser
+                ? profilePic
+                : props.credentials.user.imgUser
+            }
+            alt="imgUser"
+          />
+        </div>
+        <div onClick={() => logOut("/")}>
+          <Boton lugar="/" destino="LogOut" />
+        </div>
+      </div>
+    );
+
+
+  
+  
+  } else if (props.credentials?.token !== "") {
     return (
       <div className="headerBody">
         <div>
@@ -43,12 +79,15 @@ const Header = (props) => {
             alt="imgUser"
           />
         </div>
-
         <div onClick={() => logOut("/")}>
           <Boton lugar="/" destino="LogOut" />
         </div>
       </div>
     );
+   
+   
+   
+   
   } else {
     return (
       <div className="headerBody">
@@ -64,3 +103,35 @@ const Header = (props) => {
   }
 };
 export default connect((state) => ({ credentials: state.credentials }))(Header);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

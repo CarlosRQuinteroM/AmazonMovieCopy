@@ -8,7 +8,6 @@ import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 const InfoMovies = (props) => {
   let history = useHistory();
   const baseImgUrl = "https://image.tmdb.org/t/p";
-  // const size = "w1280";
   const sizePoster = "w200";
 
   const Alquiler = (movie) => {

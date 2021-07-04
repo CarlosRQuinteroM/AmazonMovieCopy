@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .padreContainer {
+    height: 100%;
+    width: 100%;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7035189075630253) 51%, rgba(0,0,0,0.008841036414565795) 100%);
+    background-color: rgb(43, 42, 42);
+
+    .containerCards {
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        flex-wrap: wrap;
+
+        .card {
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.801);
+            color: white;
+            // justify-content: space-evenly;
+            align-items: center;
+            padding: 0.5em;
+            margin: 0.5em;
+            width: 20%;
+            height: 25em;
+            border-radius: 5px;
+            border: 1px solid grey;
+
+            .moviePoster {
+                height: 15em;
+                border-radius: 1em;
+                width: 50%;
+            }
+
+            .textoAdmin {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                width: 50%;
+                // height: 15em;
+                // max-height: 15em;
+            }
+        }
+    }
+}
+
+
+
+
+
