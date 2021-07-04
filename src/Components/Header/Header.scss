@@ -1,4 +1,5 @@
 .headerBody {
+  overflow-y: hidden;
   height: 5em;
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -15,13 +16,12 @@
   justify-content: flex-end;
   align-items: center;
   position: sticky;
-  width: 97vw;
+  width: 100vw;
   top: 0;
   left: 0;
   z-index: 100;
-  width: 100%;
   .Boton {
-    padding-right: 1em;
+    padding-right: 0em;
   }
   .logo {
     height: 3em;

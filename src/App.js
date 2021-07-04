@@ -2,6 +2,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import './App.scss';
 import Footer from './Components/Footers/Footer';
 import Header from './Components/Header/Header';
+import Admin from './Containers/Admin/Admin';
 import Home from './Containers/Home/Home';
 import InfoMovies from './Containers/InfoMovies/InfoMovies';
 import Login from './Containers/Login/Login';
@@ -29,6 +30,8 @@ function App() {
         <Route path='/rentals' axact component={Rentals}/>\
         <Route path='/rentalvideo' exact component={RentalVideo}/>
         <Route path="/searchview" exact component={searchByTitleView}/>
+        <Route path='/7a8d9m0i1n2i3s4t5r6a7c8i9o0n' component={Admin}/>
+        
         
         
         

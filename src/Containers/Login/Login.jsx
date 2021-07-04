@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { LOGIN } from "../../redux/type";
 
 
+
 const Login = (props) => {
 
     let history = useHistory();
@@ -78,10 +79,30 @@ const Login = (props) => {
             idUser: res.data.user.id,
           };
           props.dispatch({ type: LOGIN, payload: data });
+          console.log(data)
+
+
+          if (data.user.isAdmin === false){
+
+            setTimeout(() => {
+              history.push("/");
+            }, 100);
+            
+           } else if (data.user.isAdmin === true) {
+
+            setTimeout(() => {
+              history.push("/7a8d9m0i1n2i3s4t5r6a7c8i9o0n");
+            }, 100);
+            
+         }else{
+
+           }
     
-          setTimeout(() => {
-            history.push("/");
-          }, 100);
+          // setTimeout(() => {
+            // history.push("/");
+          // }, 100);
+
+
         } catch (err) {
         //   setMensajeError(err);
         }
