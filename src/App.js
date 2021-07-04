@@ -12,7 +12,6 @@ import RentalVideo from './Containers/RentalVideo/RentalVideo';
 import RentMovie from './Containers/RentMovie/RentMovie';
 import searchByTitleView from './Containers/searchByTitleView/searchByTitleView';
 
-
 function App() {
   return (
     <div className="App">

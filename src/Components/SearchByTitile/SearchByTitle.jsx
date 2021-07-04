@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { ADD_MOVIE } from "../../redux/type";
+import { ADD_MOVIE , DELETE_MOVIE } from "../../redux/type";
 import axios from "axios";
 import { Input } from "antd";
+const { Search } = Input;
+
 
 const SearchByTitle = (props) => {
   let history = useHistory();
@@ -13,8 +15,10 @@ const SearchByTitle = (props) => {
   const [msgError, setMensajeError] = useState("");
 
   useEffect(() => {
-    findTitle();
+    findTitle()
   }, []);
+
+
   const [errors, setErrors] = useState({
     eInput: "",
   });
@@ -34,6 +38,9 @@ const SearchByTitle = (props) => {
         setMovie(res.data?.results);
         document.getElementById("title").value = "";
         history.push("/searchview");
+        // setTimeout(() => {
+          // props.dispatch({type : DELETE_MOVIE})
+        // }, 1000);
       })
       .catch(() => {
         return Error("Lo siento pelicula no la tenemos disponible");
@@ -58,16 +65,19 @@ const SearchByTitle = (props) => {
   // console.log(movie);
   return (
     <div>
-      <Input
+      <Search 
+        enterButton="Search"
+        size="large"
         className="option"
         type="text"
         id="title"
         name="input"
         placeholder="Busca peliculas"
+        onSearch={() => findTitle(updateDatos)}
         onBlur={() => checkError("input")}
         onClick={() => findTitle(updateDatos)}
       />
-      <div className="error">{errors.eInput}</div>
+      * <div className="error">{errors.eInput}</div>*{" "}
     </div>
   );
 };
@@ -75,3 +85,25 @@ export default connect((state) => ({
   credentials: state.credentials,
   movies: state.movies,
 }))(SearchByTitle);
+
+{
+  /* <div> */
+}
+{
+  /* <Search */
+}
+// placeholder="input search text"
+// enterButton="Search"
+// size="large"
+// onSearch={() => findTitle(updateDatos)}
+//  onClick={() => findTitle(updateDatos)}
+// onBlur={() => checkError("input")}
+{
+  /* /> */
+}
+{
+  /* <div className="error">{errors.eInput}</div> */
+}
+{
+  /* </div> */
+}

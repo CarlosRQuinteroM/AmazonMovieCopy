@@ -13,10 +13,9 @@ const SearchByTitleView = (props) => {
   let history = useHistory();
   const [searchView, setsearchView] = useState([]);
 
-  const baseImgUrl = "https://image.tmdb.org/t/p/w200";
-
   useEffect(() => {
     setsearchView(props.movies);
+    selectMovie()
   }, []);
 
   const selectMovie = async (movie) => {
