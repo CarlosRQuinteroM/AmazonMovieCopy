@@ -35,7 +35,6 @@ const ScrollTopRate = (props) => {
     }
   };
   // console.log(setMoviesTopRate);
-  console.log(moviesTopRate);
 
   const selectMovie = async (movie) => {
     try {
