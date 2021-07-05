@@ -70,7 +70,7 @@ To run the program on your local machine:
 npm start
 ```
 
-#### Components 🔧
+#### Components ⚙️
  * Boton
  * Footer
  * Header
@@ -92,5 +92,5 @@ npm start
  * /SearchByTitleView
 
 
-  ## DEMO
+  ## DEMO 🚀
  *  [Video](https://vimeo.com/571006708)
