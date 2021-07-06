@@ -1,9 +1,21 @@
 @import "./scss/Variables.scss";
+@import"./Components/Footers/Footer.scss";
 @import "./Containers/Home/Home.scss";
 @import "./Components/Header/Header.scss";
 @import "./Components/Footers/Footer.scss";
 @import "./Containers//Login/Login..scss";
 @import "./Components/Boton/Boton.scss";
+@import "./Components/Scroll/Scroll.scss";
+@import "./Containers/Register/Register.scss";
+@import './Components/ScrollMovies/ScrollTopRate.scss';
+@import "./Containers/Profile/Profile.scss";
+@import "./Containers/InfoMovies/InfoMovies.scss";
+@import "./Containers/RentMovie/RentMovie.scss";
+@import "./Containers/Rentals/Rentals.scss";
+@import "./Components/Spinner/Spinner.scss";
+@import './Containers/RentalVideo/RentalVideo.scss';
+@import './Containers/searchByTitleView/searchByTitleView.scss';
+@import './Containers/Admin/Admin.scss';
 
 
 

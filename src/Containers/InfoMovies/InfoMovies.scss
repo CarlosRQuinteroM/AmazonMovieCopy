@@ -1,0 +1,96 @@
+.selectMovie {
+  background-color: black;
+  width: 100vw;
+  height: 100vw;
+  position: absolute;
+  align-items: center;
+  align-content: center;
+  top: 5em;
+  left: 0;
+  .backdrop_path {
+    // -webkit-filter: blur(5px);
+    // -moz-filter: blur(5px);
+    // -o-filter: blur(5px);
+    // -ms-filter: blur(5px);
+    // filter: blur(5px);
+    width: 100%;
+    height: 40%;
+    align-items: inherit;
+    left: 4em;
+    z-index: 2;
+  }
+  .infoSelectMovie {
+    position: sticky;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 23vw;
+    // width: 75em;
+    // height: 35em;
+    left: 19em;
+    background-color: rgb(73, 71, 71);
+    z-index: 2;
+    border-radius: 2em;
+    padding-left: 1em;
+
+    .poster_path {
+      margin-left: 1.5em;
+      border-radius: 0.3em;
+      z-index: 4;
+    }
+    .infoPoster {
+      padding-left: 1em;
+      width: 45em;
+      color: rgb(200, 200, 200);
+      .infoPoster2 {
+        align-items: flex-start;
+
+        width: 45em;
+      }
+      .infoPoster3 {
+        align-items: flex-start;
+        padding-bottom: 2em;
+      }
+      .infoPoster4 {
+        align-items: flex-start;
+
+        width: 10em;
+      }
+    }
+  }
+
+  .infoPoster {
+
+    padding-left: 1em;
+    width: 49em;
+    color: rgb(200, 200, 200);
+    .infoPoster2 {
+      align-items: flex-start;
+
+      width: 45em;
+    }
+    .infoPoster3 {
+      align-items: flex-start;
+
+    }
+    .infoPoster4 {
+      align-items: flex-start;
+      width: 10em;
+    }
+  }
+  .botonAlquiler {
+    align-items: flex-start;
+    border: solid 1px rgb(148, 144, 144);
+    border-radius: 2em;
+    background-color: $color4;
+    width: 7em;
+    height: 4em;
+    align-items: center;
+    align-content: center;
+    &:hover {
+      background-color: $color1;
+      transition: 0.5s;
+      transform: scale(1.05);
+    }
+  }
+}
