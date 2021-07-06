@@ -34,7 +34,7 @@ const RentMovie = (props) => {
     //console.log(body);
 
     axios
-      .post("http://localhost:3005/orders/", body, {
+      .post("https://rentmovie-back3nd.herokuapp.com/orders/", body, {
         headers: { authorization: "Bearer " + token },
       })
       .then((res) => {})

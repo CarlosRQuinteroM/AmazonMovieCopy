@@ -15,7 +15,7 @@ const Admin = (props) => {
 
   const datosAdmin = async () => {
     axios
-      .get("http://localhost:3005/orders/", {
+      .get("https://rentmovie-back3nd.herokuapp.com/orders/", {
         headers: { authorization: "Bearer " + token },
       })
 

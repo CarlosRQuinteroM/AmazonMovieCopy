@@ -31,7 +31,7 @@ const Rentals = (props) => {
 
     try {
       let res = await axios.post(
-        `http://localhost:3005/orders/orderuserid/`,
+        `https://rentmovie-back3nd.herokuapp.com/orders/orderuserid/`,
         body,
         { headers: { authorization: "Bearer " + token } }
       );
