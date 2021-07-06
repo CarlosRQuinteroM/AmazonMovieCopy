@@ -32,6 +32,8 @@ const Register = () => {
   });
 
   const updateFormulario = (e) => {
+   
+
     setDatosUser({ ...datosUser, [e.target.name]: e.target.value });
   };
 
@@ -185,7 +187,7 @@ const Register = () => {
     };
 
     axios
-      .post("http://localhost:3005/users", user)
+      .post(`https://rentmovie-back3nd.herokuapp.com/users`, user)
       .then((res) => {})
       .catch((error) => {
         console.log(error);
